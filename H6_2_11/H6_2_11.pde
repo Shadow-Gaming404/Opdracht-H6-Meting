@@ -1,8 +1,9 @@
-int steen1 = 6;
+int steen1 = 1;
 int steen2 = 1;
-int steen3 = 2;
+int steen3 = 1;
 String resultaat = "";
 int Totaal = steen1 + steen2 + steen3;
+boolean Miss = false;
 
 if(Totaal == 3){
 println("Critical MISS! (1 + 1 + 1)");
@@ -12,42 +13,33 @@ if(Totaal == 18){
 println("Critical HIT! (6 + 6 + 6)");
 }
 
-else if(Totaal != 3 || Totaal != 18){ 
+if(Totaal != 3 && Totaal != 18){ 
   
 //steen 1
 
-if (steen1 != 1){
-resultaat = ("Steen 1: Hit! (" + steen1 + ")");
+resultaat = ("Steen 1: (" + steen1 + ")");
   println(resultaat);
-}
-
-else if (steen1 == 1){
-resultaat = ("Steen 1: Miss! (" + steen1 + ")");
-  println(resultaat);
-}
 
 //steen 2
 
-if (steen2 != 1){
-resultaat = ("Steen 2: Hit! (" + steen2 + ")");
+resultaat = ("Steen 2: (" + steen2 + ")");
   println(resultaat);
-}
-
-if (steen2 == 1){
-resultaat = ("Steen 2: Miss! (" + steen2 + ")");
-  println(resultaat);
-}
 
 // steen 3
 
-if (steen3 != 1){
-resultaat = ("Steen 3: Hit! (" + steen3 + ")");
+resultaat = ("Steen 3: (" + steen3 + ")");
   println(resultaat);
+
+
+
+
+if (steen1 == 1 || steen2 == 1 || steen3 == 1 || Totaal != 3){
+println("Jammer genoeg wel miss (" + steen1 + "+" + steen2 + "+" + steen3 + ")" + "(" + Totaal + ")");
+Miss = true;
 }
 
-if (steen3 == 1){
-resultaat = ("Steen 3: Miss! (" + steen3 + ")");
-  println(resultaat);
+if (Totaal != 3 && Totaal != 18 && Miss != true){
+println("Lekker raak! (" + steen1 + "+" + steen2 + "+" + steen3 + ")" + "(" + Totaal + ")");
 }
 
 }
